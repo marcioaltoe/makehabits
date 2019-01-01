@@ -51,7 +51,12 @@ def main():
             elif is_due(task['due_date_utc']):
                 update_streak(task, 0)
                 date_string = task['date_string']
-                task.update(date_string= date_string + ' starting tod')
+                str1= date_string
+                str2 = "ev"
+                if str1.find(str2) >= 0:
+                    task.update(date_string= date_string + ' starting tod')
+                else
+                    task.update('every day starting today')
     api.commit()
 
 if __name__ == '__main__':
